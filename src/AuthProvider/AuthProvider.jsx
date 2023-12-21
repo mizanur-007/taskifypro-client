@@ -1,7 +1,7 @@
 import React, { Children, createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import axios from "axios";
+// import axios from "axios";
 
 export const AuthContext = createContext(null);
 const provider = new GoogleAuthProvider();
