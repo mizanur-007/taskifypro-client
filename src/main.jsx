@@ -7,6 +7,8 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import { ToastContainer } from 'react-toastify'
+import Home from './Pages/Home/Home.jsx'
+import Login from './Pages/Login/Login.jsx'
 
 
 const client = new QueryClient()
@@ -16,14 +18,14 @@ const router = createBrowserRouter([
     element:<Layout></Layout>,
     errorElement:<ErrorPage></ErrorPage>,
     children:[
-      // {
-      //   path: '/',
-      //   element:<Home></Home>
-      // },
-      // {
-      //   path:'/login',
-      //   element:<Login></Login>
-      // },
+      {
+        path: '/',
+        element:<Home></Home>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
       // {
       //   path:'/register',
       //   element:<Registration></Registration>

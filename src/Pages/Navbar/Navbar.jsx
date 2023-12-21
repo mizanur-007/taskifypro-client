@@ -24,7 +24,7 @@ const Navbar = () => {
   const {user} = useContext(AuthContext);
     return (
 <>
-<div className="navbar bg-base-50 sticky top-0 hidden lg:block">
+<div className="navbar bg-violet-50 fixed top-0 hidden lg:block">
         <div className="flex-1">
           <a className="btn btn-ghost normal-case text-2xl font-bold text-violet-700">Taskify<span className='text-cyan-600 -m-2'>Pro</span></a>
         </div>
@@ -37,7 +37,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600 ml-12'>Home</span>
+  <span className='text-xl font-semibold text-emerald-600'>Home</span>
 </NavLink>
           <NavLink
   to="/tasks"
@@ -45,7 +45,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600'>Tasks</span>
+  <span className='text-xl font-semibold text-emerald-600'>About</span>
 </NavLink>
           <NavLink
   to="/todo"
@@ -53,7 +53,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600'>To Do</span>
+  <span className='text-xl font-semibold text-emerald-600'>Services</span>
 </NavLink>
           <NavLink
   to="/add"
