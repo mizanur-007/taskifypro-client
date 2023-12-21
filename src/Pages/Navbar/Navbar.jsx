@@ -26,9 +26,9 @@ const Navbar = () => {
 <>
 <div className="navbar bg-base-50 sticky top-0 hidden lg:block">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-2xl font-bold text-emerald-700">Task<span className='text-red-600 -ml-3'>Swift</span></a>
+          <a className="btn btn-ghost normal-case text-2xl font-bold text-violet-700">Taskify<span className='text-cyan-600 -m-2'>Pro</span></a>
         </div>
-        <div className="flex-none gap-2">
+        <div className="flex-1 gap-2">
           <div className="form-control">
 <div className='space-x-6'>
 <NavLink
@@ -37,7 +37,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600'>Dashboard</span>
+  <span className='text-xl font-semibold text-emerald-600 ml-12'>Home</span>
 </NavLink>
           <NavLink
   to="/tasks"
