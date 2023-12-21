@@ -9,6 +9,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx'
 import { ToastContainer } from 'react-toastify'
 import Home from './Pages/Home/Home.jsx'
 import Login from './Pages/Login/Login.jsx'
+import Registration from './Pages/Registration/Registration.jsx'
 
 
 const client = new QueryClient()
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
         path:'/login',
         element:<Login></Login>
       },
-      // {
-      //   path:'/register',
-      //   element:<Registration></Registration>
-      // },
+      {
+        path:'/register',
+        element:<Registration></Registration>
+      },
       // {
       //   path:'/tasks',
       //   element:<Tasks></Tasks>
