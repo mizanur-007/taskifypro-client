@@ -63,7 +63,7 @@ const Registration = () => {
       });
   };
   return (
-    <div className="flex flex-row-reverse items-center justify-between gap-52  bg-[#dbf5fb] px-5 rounded-xl pb-11 pt-8 mt-20">
+    <div className="flex flex-row-reverse items-center justify-between gap-52  bg-violet-50 px-5 rounded-xl pb-11 pt-8 mt-20">
       <div className="flex-1 ml-10 md:ml-48 lg:ml-16">
         <h1 className="text-3xl text-white text-center bg-gradient-to-r from-[#11bfef] via-[#3cecfc] to-[#a7e4f4] mb-7 py-9 rounded-3xl font-bold w-80">
           Registration
@@ -161,7 +161,7 @@ const Registration = () => {
           </div>
         </div>
       </div>
-      <div className="max-h-[80vh] flex-1 hidden lg:block">
+      <div className="max-h-[100vh] flex-1 hidden lg:block">
         <Lottie animationData={registerlogo}></Lottie>
       </div>
     </div>

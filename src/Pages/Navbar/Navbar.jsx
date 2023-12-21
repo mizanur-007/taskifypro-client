@@ -24,7 +24,7 @@ const Navbar = () => {
   const {user} = useContext(AuthContext);
     return (
 <>
-<div className="navbar bg-violet-50 fixed top-0 hidden lg:block">
+<div className="navbar bg-violet-50  top-0 hidden lg:block">
         <div className="flex-1">
           <a className="btn btn-ghost normal-case text-2xl font-bold text-violet-700">Taskify<span className='text-cyan-600 -m-2'>Pro</span></a>
         </div>
@@ -75,9 +75,11 @@ const Navbar = () => {
       <img src={user?.photoURL} />
     </div>
   </label>
-  <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+  <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
     <li>
-      <button className='btn btn-outline btn-accent mb-2'>{user?.displayName}</button>
+      <Link to={'/dashboard'}>
+      <button className='btn btn-outline btn-accent mb-2 text-center items-center text-xl px-12 w-full'>Dashboard</button>
+      </Link>
     </li>
     <li><button onClick={handleLogout} className='btn btn-secondary text-white text-center font-bold items-center text-xl pt-2'>LogOut</button></li>
   </ul>

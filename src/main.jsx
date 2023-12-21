@@ -10,6 +10,8 @@ import { ToastContainer } from 'react-toastify'
 import Home from './Pages/Home/Home.jsx'
 import Login from './Pages/Login/Login.jsx'
 import Registration from './Pages/Registration/Registration.jsx'
+import Dashboard from './Layout/Dashboard.jsx'
+import Profile from './Pages/Profile/Profile.jsx'
 
 
 const client = new QueryClient()
@@ -59,6 +61,16 @@ const router = createBrowserRouter([
       //   path:'/add',
       //   element:<PrivateRoute><AddTask></AddTask></PrivateRoute>
       // }
+    ]
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children:[
+      {
+        path:'/dashboard',
+        element:<Profile></Profile>
+      }
     ]
   }
 ])
