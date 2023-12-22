@@ -2,10 +2,10 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content">
+        <footer className="footer p-10 bg-violet-400 text-neutral-content">
         <aside>
 
-          <p className='text-3xl font-bold'>TaskSwift</p>
+          <p className='text-3xl font-bold'>TaskifyPro</p>
           <p>Assistant Of Better Life</p>
         </aside> 
         <nav>
