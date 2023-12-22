@@ -12,6 +12,8 @@ import Login from './Pages/Login/Login.jsx'
 import Registration from './Pages/Registration/Registration.jsx'
 import Dashboard from './Layout/Dashboard.jsx'
 import Profile from './Pages/Profile/Profile.jsx'
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 
 const client = new QueryClient()
