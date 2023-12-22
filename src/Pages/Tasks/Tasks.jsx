@@ -10,8 +10,11 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Tasks = () => {
     const [selectedTab, setSelectedTab] = useState('ToDo');
-    const {user} = useContext(AuthContext)
+    const {user,loading} = useContext(AuthContext)
     console.log(user?.email)
+    if(loading){
+        return <LoaderPage></LoaderPage>
+    }
 
     const handleTabSelect = (index) => {
         const tabTitles = ['ToDo', 'Ongoing', 'Completed'];

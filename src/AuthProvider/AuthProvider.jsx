@@ -41,26 +41,7 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
           setUser(user);
           setLoading(false);
-        // const loggedUser = {email: user?.email}
 
-        // if(user){
-        //   axios.post("https://task-management-server-peach.vercel.app/api/v1/jwt",loggedUser, {withCredentials:true})
-        //   .then((res)=>{
-        //     console.log(res.data)
-        //   })
-        //   .catch((error)=>{
-        //     console.log(error.message)
-        //   })
-        // }
-        // else{
-        //   axios.post("https://task-management-server-peach.vercel.app/api/v1/logout",loggedUser, {withCredentials:true})
-        //   .then((res)=>{
-        //     console.log(res.data)
-        //   })
-        //   .catch((error)=>{
-        //     console.log(error.message)
-        //   })
-        // }
 
         });
 
