@@ -14,6 +14,7 @@ import Dashboard from './Layout/Dashboard.jsx'
 import Profile from './Pages/Profile/Profile.jsx'
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import AddTask from './Pages/Add Task/AddTask.jsx'
 
 
 const client = new QueryClient()
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path:'/dashboard',
         element:<Profile></Profile>
+      },
+      {
+        path: '/dashboard/createtask',
+        element:<AddTask></AddTask>
       }
     ]
   }

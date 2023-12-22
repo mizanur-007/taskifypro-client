@@ -1,28 +1,41 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useForm } from "react-hook-form";
+import Select from "react-select";
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const AddTask = () => {
+  const {user} = useContext(AuthContext);
+  
+  const { register, handleSubmit } = useForm()
+  const [selectedOption, setSelectedOption] = useState(null);
 
-    const handleAdd = (event)=>{
-        event.preventDefault();
-        const form = event.target;
-        const task = form.task.value;
-        const projectTitle = form.project.value;
-        const shortDescription = form.description.value;
-        const detailInformation = form.information.value;
-        const dueDate = form.date.value;
+  const options = [{value:'High',label:'High'},{value:'Moderate',label:'Moderate'},{value:'Low',label:'Low'}];
+
+    const  onSubmit =async (data)=>{
+        
+        const task = data.task;
+        const shortDescription = data.description;
+        const dueDate = data.date;
+        const priority = selectedOption.value;
+        const creator_email = user?.email;
+        const status = 'ToDo';
+
     
         const AddData = {
-            projectTitle,
+          priority,
         task,
         shortDescription,
-        detailInformation,
-        dueDate
+        creator_email,
+        dueDate,
+        status
     
         }
-        axios.post(`https://task-management-server-peach.vercel.app/api/v1/tasks`,AddData,{withCredentials:true})
+        console.log(AddData)
+        axios.post(`http://localhost:5000/api/v1/tasks`,AddData)
         .then(()=>{
-          toast.error("Added Successfully",{
+          toast.success("Added Successfully",{
             autoClose: 2000
           });
         })
@@ -45,17 +58,21 @@ const AddTask = () => {
           <div className="hero-overlay bg-opacity-50 rounded-xl"></div>
           <div className=" text-center lg:w-500px">
               <h1 className="text-3xl text-pink-400 font-bold mb-8">Add A Task</h1>
-            <form onSubmit={handleAdd} className="space-y-6">
+            <form  onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="flex flex-col lg:flex-row gap-6">
-              <input className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Task' type="text" name="task" />
-              <input className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Project Title' name="project" type="text" />
+              <input {...register("task")} id='task' className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Task' type="text" />
+              <input {...register("description")} id='description' className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='description' type="text" />
               </div>
               <div className="flex flex-col lg:flex-row gap-6">
-              <input className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Short Description' name="description" type="text" />
-              <input className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Details' name="information" type="text" />
+              <Select
+                    className="select"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options}
+                    
+                  />
+              <input {...register("date")} id='date' className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Date'  type="date" />
               </div>
-              <input className="w-80 py-1 px-2 bg-[#00000049] rounded-md text-white font-medium" placeholder='Date' name="date" type="date" />
-              <br />
               <button type="submit" className="btn bg-pink-600 btn-block text-white text-2xl font-bold">Add</button>
               
             </form>

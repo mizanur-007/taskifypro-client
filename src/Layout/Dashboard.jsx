@@ -8,7 +8,7 @@ const Dashboard = () => {
                 <Link to={'/'}>
                 <button className="block btn w-full btn-outline">Home</button>
                 </Link>
-                <Link to={'/createtask'}>
+                <Link to={'/dashboard/createtask'}>
                 <divider></divider>
                 <button  className="block btn w-full btn-outline">Create</button>
                 </Link>
