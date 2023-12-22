@@ -55,14 +55,6 @@ const Navbar = () => {
 >
   <span className='text-xl font-semibold text-emerald-600'>Services</span>
 </NavLink>
-          <NavLink
-  to="/add"
-  className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
-  }
->
- <span className='text-xl font-semibold text-emerald-600'>ADD</span>
-</NavLink>
 {
   !user && <Link to={'/login'}><button className='btn btn-outline btn-accent ml-[570px]'>LogIn</button></Link>
 }
@@ -102,7 +94,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600'>Dashboard</span>
+  <span className='text-xl font-semibold text-emerald-600'>Home</span>
 </NavLink></li>
         <li>          <NavLink
   to="/tasks"
@@ -110,7 +102,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600'>Tasks</span>
+  <span className='text-xl font-semibold text-emerald-600'>About</span>
 </NavLink></li>
         <li>          <NavLink
   to="/todo"
@@ -118,15 +110,7 @@ const Navbar = () => {
     isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
   }
 >
-  <span className='text-xl font-semibold text-emerald-600'>To Do</span>
-</NavLink></li>
-        <li>          <NavLink
-  to="/add"
-  className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active text-red-600 font-bold underline" : ""
-  }
->
- <span className='text-xl font-semibold text-emerald-600'>ADD</span>
+  <span className='text-xl font-semibold text-emerald-600'>Services</span>
 </NavLink></li>
       </ul>
     </div>
