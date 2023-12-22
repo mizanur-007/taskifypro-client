@@ -33,7 +33,7 @@ const AddTask = () => {
     
         }
         console.log(AddData)
-        axios.post(`http://localhost:5000/api/v1/tasks`,AddData)
+        axios.post(`https://taskifypro-server.vercel.app/api/v1/tasks`,AddData)
         .then(()=>{
           toast.success("Added Successfully",{
             autoClose: 2000

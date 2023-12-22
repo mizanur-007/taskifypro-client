@@ -22,7 +22,7 @@ const Tasks = () => {
     const {data, isLoading, isError,refetch} = useQuery({
         queryKey:["tasks",selectedTab],
         queryFn: async()=>{
-            const result = await axios.get(`http://localhost:5000/api/v1/tasks?email=${user?.email}&status=${selectedTab}`);
+            const result = await axios.get(`https://taskifypro-server.vercel.app/api/v1/tasks?email=${user?.email}&status=${selectedTab}`);
             const data = await result.data;
             return data;
         }
@@ -42,13 +42,13 @@ const Tasks = () => {
 
     const handleComplete = async(id)=>{
         const status = 'Completed'
-        const data = await axios.patch(`http://localhost:5000/api/v1/update/${id}`,{status})
+        const data = await axios.patch(`https://taskifypro-server.vercel.app/api/v1/update/${id}`,{status})
         console.log(data)
         refetch()
     }
     const handleOngoing = async(id)=>{
         const status = 'Ongoing'
-        const data = await axios.patch(`http://localhost:5000/api/v1/update/${id}`,{status})
+        const data = await axios.patch(`https://taskifypro-server.vercel.app/api/v1/update/${id}`,{status})
         console.log(data)
         refetch()
     }
